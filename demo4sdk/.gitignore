@@ -1,0 +1,7 @@
+windows/ipch/
+windows/x64/
+*.suo
+*.sdf
+*.opensdf
+*.idb
+windows/Debug/

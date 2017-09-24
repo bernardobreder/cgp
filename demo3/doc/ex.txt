@@ -1,0 +1,76 @@
+return 1+2
+	ia = 1 // int_reg_a = 1
+	ib = 2 // int_reg_b = 2
+	ia = ia + ib // int_sum_reg_ab_a
+	ret ia // ret_reg_a
+----------------------------------------
+return (1+2)+3
+	ia = 1 // int_reg_a = 1
+	ib = 2 // int_reg_b = 2
+	ia = ia + ib // int_sum_reg_ab_a
+	ib = 3 // int_reg_b = 3
+	ia = ia + ib // int_sum_reg_ab_a
+	ret a // ret_reg_a
+----------------------------------------	
+return (1+2)+(3+4)
+	ia = 1 // int_reg_a = 1
+	ib = 2 // int_reg_b = 2
+	ia = ia + ib // int_sum_reg_ab_a
+	push ia // int_push_reg_a
+	ia = 3 // int_reg_a = 3
+	ib = 4 // int_reg_b = 4
+	ia = ia + ib // int_sum_reg_ab_b
+	ib = pop // int_pop_reg_a
+	ia += ib // int_sum_reg_ab_a
+	ret ia // ret_reg_a
+----------------------------------------
+do
+	int a = 1
+	int b = 2
+	return a + b
+end
+	ia = 1
+	ib = 2
+	ia += ib
+	ret ia
+	
+	inc 8
+	ia = 1
+	store 8
+	ib = 2
+	store 4
+	ia = load 8
+	ib = load 4
+	ia += ib
+	dec 8
+	ret ia
+
+	stack_push 8
+	int_reg_a 1
+	stack_store_a 8
+	int_reg_a 2 
+	stack_store_a 4
+	stack_reg_a 8
+	stack_reg_b 4
+	int_sum_reg_ab_a
+	ret_reg_a
+----------------------------------------
+do
+	int a = 1+2
+	int b = 3+4
+	return a + b
+end
+	stack_push 8
+	int_reg_a 1
+	int_reg_b 2
+	int_sum_reg_ab_a
+	stack_store_a 8
+	int_reg_a 3
+	int_reg_b 4
+	int_sum_reg_ab_a
+	stack_store_a 4
+	stack_reg_a 8
+	stack_reg_b 4
+	int_sum_reg_ab_a
+	ret_reg_a
+----------------------------------------

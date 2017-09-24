@@ -1,0 +1,1 @@
+gcc -Iinc -Ilib/lightning ../jit/src/*.c lib/lightning/lightning.c lib/lightning/jit_print.c lib/lightning/jit_note.c lib/lightning/jit_memory.c lib/lightning/jit_disasm.c -lm -O3 -o jit -w

@@ -1,0 +1,13 @@
+windows/Debug/
+windows/Release/
+windows/x64/
+compiler/windows/Debug/
+compiler/windows/Release/
+compiler/windows/x64/
+vm/windows/Debug/
+vm/windows/Release/
+vm/windows/x64/
+*.sdf
+*.opensdf
+*.suo
+*.obj

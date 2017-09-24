@@ -1,0 +1,1 @@
+gcc src/*.c -I/usr/local/cuda/include -Iinc -lm -lcuda -L/usr/local/cuda/lib -O3 -o cgp
